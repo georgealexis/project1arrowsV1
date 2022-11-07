@@ -1,0 +1,54 @@
+@import url("https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap");
+
+body {
+  font-family: "Press Start 2P", sans-serif;
+  color: black;
+  background-color: grey;
+}
+
+main {
+  height: 50vh;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+h1 {
+  font-size: 70px;
+  text-align: center;
+}
+
+.button {
+  border: 5px dashed black;
+  background-color: #eee;
+  color: #222;
+  font-size: 20px;
+  font-family: inherit;
+  padding: 10px;
+  cursor: pointer;
+}
+
+p {
+  font-size: 20px;
+  margin: 20px;
+}
+
+.arrow {
+  font-size: 400px;
+  margin-top: 20vh;
+}
+
+#timerContainer {
+  width: 80%;
+  margin: auto;
+  background-color: black;
+  border-radius: 5px;
+}
+
+#timerBar {
+  width: 100%;
+  height: 8px;
+  background-color: green;
+  border-radius: 5px;
+}

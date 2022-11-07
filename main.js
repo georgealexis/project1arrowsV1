@@ -44,6 +44,9 @@ const createArrow = () => {
 // return arrow+(direction of arrow) - to be use later
 
 $("#start").on("click", () => {
+  //*https://stackoverflow.com/questions/46597321/how-to-add-a-3-seconds-countdown-before-calling-the-function-to-start-a-game-in
+  $("#start").hide();
+  $("#reset").prop("disabled", true);
   function countdown(time) {
     if (time > 0) {
       $("h1").text(`${time}`);
@@ -51,15 +54,16 @@ $("#start").on("click", () => {
         countdown(time - 1);
       }, 1000);
     } else {
-      $("h1").text(`ARROW!`);
+      $("h1").text(`ARROW`);
       createArrow();
-      $("#start").hide();
 
       //? when the start button is clicked, it will run the createarrow function and hide the start button
       //? timer to start only after the start button is clicked
       const timerBarFrame = () => {
         if (timerBarWidthNumerator <= 0) {
-          $("h1").text("GAMEOVER");
+          $(".arrow").remove();
+          $(".gameBody").text("GAMEOVER").css("font-size", "90px");
+          $("#reset").prop("disabled", false);
           clearInterval(timerBarInterval);
           $("body").off("keydown");
           //* https://api.jquery.com/unbind/
@@ -119,12 +123,13 @@ $("#start").on("click", () => {
 // });
 
 $("#reset").on("click", () => {
+  $(".gameBody").text("");
   $("h1").text("A-R-R-O-W");
   currentscore = 0;
   $("#currentscore").text("0");
   $(".arrow").remove();
   $("#start").show();
-  // $("#timerBar").css("width", "100%");
+  $("#timerBar").css("width", "100%");
 });
 
 // when 'play again' button is clicked, start button appears

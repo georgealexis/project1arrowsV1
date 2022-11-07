@@ -8,7 +8,7 @@ body {
 
 main {
   height: 50vh;
-  color: #eee;
+  color: aquamarine;
   display: flex;
   align-items: center;
   justify-content: space-around;
